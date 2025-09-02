@@ -38,21 +38,21 @@ based on their roles.
 # Implementation 
   
 ● **Socket Programming** – Server maintains the database and serves multiple clients concurrently. 
-Clients can connect to the server and access their specific academic details. 
-● All student and faculty details and course information have been stored in text files. 
+Clients can connect to the server and access their specific academic details.  
+● All student and faculty details and course information have been stored in text files.  
 ● Read and write locks have been used to protect the critical data sections in files and to 
-maintain data integrity. 
+maintain data integrity.  
 ● System calls have been used instead of library functions to implement fundamental Operating 
 Systems concepts like Process Management, File Management, File Locking, Multithreading 
-and Inter Process Communication Mechanisms. 
+and Inter Process Communication Mechanisms.  
   
 # Steps to Run 
   
-● Open the terminal in the project directory and compile the source code. 
-➔  To compile server.c : gcc -o server -pthread server.c  
-➔ To compile client.c : gcc -o client client.c 
-● Run the server by executing: ./server 
-● In a separate terminal window, run the client by executing: ./client 
+● Open the terminal in the project directory and compile the source code.  
+➔  To compile server.c : gcc -o server -pthread server.c   
+➔ To compile client.c : gcc -o client client.c  
+● Run the server by executing: ./server  
+● In a separate terminal window, run the client by executing: ./client  
   
 # Source Code 
 There are two main source code files - server.c and client.c. 
@@ -62,32 +62,32 @@ There are two main source code files - server.c and client.c.
 The server.c file implements the server-side logic for the Course Registration Portal system that 
 supports Admin, Faculty, and Student roles. It uses C socket programming with multithreading 
 (pthread) to handle concurrent client connections. The server listens on port 8080 and interacts with 
-clients to perform user authentication, course management, and enrollment functions. 
-Key features include: 
-● User Authentication: Validates credentials for different user roles (admin, faculty, student). 
-● Admin Operations: Add/modify/block/activate students and faculty, view user data. 
-● Faculty Operations: Add, update, remove, and view courses assigned to them. 
+clients to perform user authentication, course management, and enrollment functions.  
+Key features include:  
+● User Authentication: Validates credentials for different user roles (admin, faculty, student).   
+● Admin Operations: Add/modify/block/activate students and faculty, view user data.  
+● Faculty Operations: Add, update, remove, and view courses assigned to them.  
 ● Student Operations: View all available courses, enroll/drop courses, and view their enrolled 
-courses. 
+courses.  
 ● Data Persistence: Reads from and writes to users.txt, courses.txt, and enrollments.txt using 
-file locking to maintain data consistency in concurrent access. 
+file locking to maintain data consistency in concurrent access.  
 The server uses file-based storage for simplicity and applies read/write locks to prevent race 
-conditions. 
+conditions.  
   
 **Client.c**
   
 The client.c file implements the client-side interface of the Academia: Course Registration Portal. It 
 connects to the server via TCP sockets and provides role-based menus for three types of users: 
-Admin, Faculty, and Student. 
-Key features: 
-● Login: Sends the user’s role, username, and password to the server for authentication. 
+Admin, Faculty, and Student.  
+Key features:  
+● Login: Sends the user’s role, username, and password to the server for authentication.  
 ● Admin Interface: Options to add/modify/block/activate students or faculty, and to view user 
-records. 
+records.  
 ● Faculty Interface: Faculty members can add, update, or remove courses they offer, view 
-course details, and change passwords. 
+course details, and change passwords.  
 ● Student Interface: Students can view available courses, enroll or drop courses, view their own 
-enrolled courses, and update their password. 
+enrolled courses, and update their password.  
 ● User Interaction: Uses standard input/output functions (scanf, printnf) for terminal-based user 
-interaction, and socket functions (send, recv) for communication with the server. 
+interaction, and socket functions (send, recv) for communication with the server.  
 The client remains responsive and menu-driven until the user chooses to log out, ensuring a smooth 
 and interactive experience for each role.
