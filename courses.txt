@@ -1,0 +1,5 @@
+maj101 Transfiguration 70 mcgonagall 2
+maj102 Potions 45 mcgonagall 0
+div101 divination 1 trelawney 1
+defense101 dada 90 rjlupin 0
+da101 dada 100 rjlupin 0
