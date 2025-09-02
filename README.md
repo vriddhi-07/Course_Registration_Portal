@@ -70,11 +70,16 @@ supports Admin, Faculty, and Student roles. It uses C socket programming with mu
 clients to perform user authentication, course management, and enrollment functions.  
   
 Key features include:  
-● User Authentication: Validates credentials for different user roles (admin, faculty, student).   
+  
+● User Authentication: Validates credentials for different user roles (admin, faculty, student).  
+  
 ● Admin Operations: Add/modify/block/activate students and faculty, view user data.  
+  
 ● Faculty Operations: Add, update, remove, and view courses assigned to them.  
+  
 ● Student Operations: View all available courses, enroll/drop courses, and view their enrolled 
 courses.  
+  
 ● Data Persistence: Reads from and writes to users.txt, courses.txt, and enrollments.txt using 
 file locking to maintain data consistency in concurrent access.  
   
@@ -88,13 +93,18 @@ connects to the server via TCP sockets and provides role-based menus for three t
 Admin, Faculty, and Student.  
   
 Key features:  
+  
 ● Login: Sends the user’s role, username, and password to the server for authentication.  
+  
 ● Admin Interface: Options to add/modify/block/activate students or faculty, and to view user 
 records.  
+  
 ● Faculty Interface: Faculty members can add, update, or remove courses they offer, view 
 course details, and change passwords.  
+  
 ● Student Interface: Students can view available courses, enroll or drop courses, view their own 
 enrolled courses, and update their password.  
+  
 ● User Interaction: Uses standard input/output functions (scanf, printnf) for terminal-based user 
 interaction, and socket functions (send, recv) for communication with the server.  
   
